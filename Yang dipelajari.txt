@@ -123,4 +123,9 @@ Fungsinya header dan pagination di folder terpisah untuk membuat kode lebih ring
 1. Selesain tugas di sesi 4
 Memperbaiki tombol previous apabila sudah di angka 1 sudah tidak akan mundur lagi
 
-2. Memperbaiki fetching berulang 
+2. Memperbaiki fetching berulang
+Mengubah fetching dengan variabel response menjadi komponen reusable, disimpan pada folder lips dan diberi nama api-libs.js
+
+3. Membuat youtube trailer video
+Membuat utilities baru untuk videoPlayer yang digunakan untuk folder anime/[id], menggunakan beberapa function untuk melakukan
+handle button
