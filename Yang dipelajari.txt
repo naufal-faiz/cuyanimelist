@@ -1,0 +1,126 @@
+*Sesi 1*
+1. Setup
+Melakukan instalasi Next melalui terminal dengan sintaks
+npx create-next-app@latest
+
+2. Memahami konsep pada next js
+Next bersifat folder, sehingga jika ada folder dengan file bernama page.js
+maka bisa dibuka melalui URL, ada juga layout yang menjadi struktur utama dari 
+kerangka halaman web itu, jika kita menaruh apapun contohnya navbar dibagian layout,maka semua
+semua halaman yang bisa diakses akan menampilkan navbar
+
+3. Tanpa perlu nodemon bisa auto refresh
+next js udah ada fitur sendiri untuk menjalankan filenya, tapi tentunya masih harus
+melakukan perintah untuk menghidupkan server, dan cara melakukannya adalah npm run dev
+
+4. Component
+fungsi penamaan index.js pada component supaya tidak bisa dibuka melalui web, tetapi
+langsung terdeteksi sebagai sebuah komponen yang dimaksud seperti navbar
+sehingga ketika melakukan import ke sebuah folder, otomatis terbaca sebagai sebuah komponen indexnya
+
+5. Page js pada bagian utama yang dekat layout
+merupakan halaman utama atau landing page
+
+6. globals.css
+aplikasi pada next js bisa menerapkan tailwind, tetapi akan ada yang lebih diutamakan yaitu 
+global.css, berbeda dari css pada html biasa, global css pada next js akan diprioritaskan sebagai css utama
+tentunya dihalaman ini kita perlu masukin yang akan diterapkan keseluruh halaman web. maka dari itu, baiknya mengunakan
+inline css menggunakan tailwind, dan hanya menggunakan global css apabila bagian penting saja. contoh: navbar 
+
+7. Tag bawaan atau function bawaan dari next js
+ada tag Link, Image, font, dan script. Untuk saat ini yang baru dipelajari adalah tag Link dan Image, keduanya punya rules masing".
+Pertama Image, dia memerlukan atribut src, width, dan height. Jika tidak menerapkannya maka akan terjadi error
+Kedua Link, dia perlu href tentunya. Ada lagi yang menarik, yaitu atribut pada next js untuk class, menggunakan nama className
+
+8. Pemanggilan Component
+komponen seperti navbar atau myanimelist dibuat menggunakan function lalu dikembalikan menggunakan export default, lalu akan mengembalikan isinya yang dipanggil dalam bentuk
+tag html pada bagian page. Fungsi terkadang ada parameternya, nah parameter menyesuaikan urutan dari pemanggilan atribut pada tag itu.
+
+9. API
+api biasanya menggunakan format json, karena yang digunakan pada pelajaran kali ini adalah pemanggilan menggunakan api dari link pada .env,
+maka pada page.js utama terlihat atribut pada myanimelist menggunakan namaParameter.namaJsonnya, sebelum menjalankan API perlu menjalankan fetching 
+terlebih dahulu, lalu menggunakan async function dan await.
+
+10. Next.config.mjs
+Jika kita melakukan pemanggilan dari luar next seperti link, perlu memasukan terlebih dahulu link itu ke config supaya program next
+bisa berjalan
+
+11. .env atau environment
+digunakan sebagai pengganti sebuah nilai berupa text, yang artinya env adalah variable untuk membuat sistem data terenskripsi
+
+12. Mapping data atau melakukan foreach supaya data api bisa ditampilkan semua
+Pemanggilan dilakukan dengan membuat nama variable untuk memanggil sumber API, lalu dibuatkan variable lagi untuk menampung keseluruhan namaJsonnya
+baru setelah itu dilakukan mapping dengan menggunakan namaVariableDariKeseluruhanJson.RuteYangInginDitampilkan.map setelahnya dibuatkan parameter penampung yaitu data yang
+memanggil dari json yang ingin ditampilkan (sebagai contoh json yang digunakan dari api myanimelist berisi data dan pagination, karena yang ingin ditampilkan data,maka rute
+nya adlah data dan dibuatkan parameter data agar mudah). setelah itu dari parameter data dilanjutkan lagi pemanggilan dari dalam data json itu
+
+*Sesi 2*
+1. Membuat Component Reusability (Componen yang bisa dipakai berulang)
+Melakukan pemindahan kode mappiing dari page js ke componen index myanimelist, mengubah parameter dari title, image menjadi api yang berisi
+data dari api. Membuat component reusability Header yang ditaruh pada folder myanimelist supaya nantinya  judul pada mapping anime tidak perlu membuat terlalu banyak
+dan memberikan parameter yang menyesuaikan kebutuhan seperti title, link, dan linktitle
+
+2. Input Search
+button icon diimport dari library melalui react, function baru bernama useRouter dan searchRef.
+ada juga preventDefault (baiknya ketiga ini nantinya dicari melalui gpt atau google).
+
+3. Folder dengan kurung siku []
+Fungsinya untuk menampilkan halaman yang nilainya diambil dari url
+
+4. Membuat halaman pada folder [keyword] untuk menampilkan hasil mapping berdasarkan anime yang dicari
+
+5. Terjadi error pada saat pencarian (sudah normal dengan sendirinya)
+
+*Sesi 3*
+
+1. Membuat searchInput bisa diakses dengan menekan enter dan bisa klick via mouse
+
+2. Buat theme UI web melalui tailwind.config.js
+Pemanggilannya menggunakan (bg-wadah-namawarna), wadah opsional
+
+3. Mengubah font family
+melalui layout, font awal adalah inter, jika diubah dengan font yang kita gunakan, maka semua yang 
+menggunakan kata inter harus diubah. saat ini menggunakan Gabarito
+
+4. Buat custom not found
+NEXT JS punya custom not foundnya sendiri, kita buat dengan not-found.js
+
+5. use client
+digunakan apabila halaman tersebut memang digunakan khusus untuk pengguna web
+
+6. Custom Loading
+NEXT JS juga punya custom loading, kita buat dengan loading.js. Lalu untuk membuat animasi bisa dibuat dengan
+CSS manual atau bisa cari di google custom loader CSS
+
+*Sesi 4*
+
+1. Perbaikan warning pada terminal
+Meminta untuk dibuatkan unique "key" pada mapping folder myanimelist, untuk menutupnua, dibuatkan index pada callback function
+lalu memanggil key pada parrent
+
+2. Penambahan validasi pada searchInput
+menambahkan statement !username agar tidak otomatis search ketika tidak mengetik apapun
+
+3. JSX
+digunakan untuk membuat component yang akan dirender ke halaman web agar lebih baik
+
+4. Perbaikan hasil decode url
+ketika kita melakukan pencarian lalu menggunakan spasi, maka akan muncul (%20) sebagai pengganti spasi
+karena permintaan pada pencarian langsung dikirim melalui parameter URLnya. Maka untuk memperbaikinya 
+dibuatkan variabel yang menyimpan function bawaan javascript yaitu decodeURI.
+
+5. Perbaikan halaman page pada folder populer
+Melakukan fetching data top anime dengan membuat parameter top/anime?page= yang berfungsi untuk mengarahkan halaman selanjutnya
+
+6. Menambahkan HeaderMenu dan Pagination pada utilities
+Fungsinya header dan pagination di folder terpisah untuk membuat kode lebih ringkas dan reusable
+
+7. Membuat logic fetching di page populer
+(Jika sudah memahami konsepnya harap tulis disini)
+
+*Sesi 5*
+
+1. Selesain tugas di sesi 4
+Memperbaiki tombol previous apabila sudah di angka 1 sudah tidak akan mundur lagi
+
+2. Memperbaiki fetching berulang 
