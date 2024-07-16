@@ -129,3 +129,14 @@ Mengubah fetching dengan variabel response menjadi komponen reusable, disimpan p
 3. Membuat youtube trailer video
 Membuat utilities baru untuk videoPlayer yang digunakan untuk folder anime/[id], menggunakan beberapa function untuk melakukan
 handle button
+
+*Sesi 6*
+
+1. Membuat bagian baru pada halaman utama
+Menambahkan bagian rekomendasi pada bagian setelah populer
+
+2. Melakukan mapping dengan flatMap
+melakukan flatMap dengan membuat function baru di bagian api-libs
+
+3. Melakukan limitasi pada halaman
+Melakukan limitasi dengan jumlah tertentu melalui slice
