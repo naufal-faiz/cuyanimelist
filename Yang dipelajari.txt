@@ -139,4 +139,18 @@ Menambahkan bagian rekomendasi pada bagian setelah populer
 melakukan flatMap dengan membuat function baru di bagian api-libs
 
 3. Melakukan limitasi pada halaman
-Melakukan limitasi dengan jumlah tertentu melalui slice
+Melakukan limitasi dengan jumlah tertentu melalui slice, jika nilainya adalah (4,8) maka yang
+akan ditampilkan adalah urutan ke 4 hingga 8
+
+*Sesi 7*
+
+1. Melakukan random recomendation
+Membuat Math.random untuk membuat hasil yang ditampilkan acak, pembuatan function dilakukan pada 
+
+2. ~~ merupakan singkatan dari Math.Floor
+Jika ingin melakukan math random maka perlu menggunakan math.floor, untuk mempersingkat kodenya
+maka bisa menggunakan (~~) sebagai penggantinya.
+
+3. Perbaikan pada bagian inputSearch
+Perbaikan jika hanya mengetik spasi maka tetap dicari, maka diperbaiki dengan trim() supaya jika
+inputan kosong atau hanya berisi spasi tidak akan dijalankan fungsi searchnya
