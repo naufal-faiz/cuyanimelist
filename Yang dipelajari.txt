@@ -177,3 +177,22 @@ file auth dan session disimpan pada bagian libs dengan nama auth-libs.js
 Kita bisa langsung membuat arah sign in dan sign langsung tanpa membuat filenya karena next js sudah
 secara default memberikannya, yang penting adalah arahnya ke keyword [...nextauth] yang berisi route.js 
 karena ini merupakan callback yang fleksibel
+
+*Sesi 9*
+
+1. Membuat middleware
+Fungsinya untuk mengatasi permasalahan tidak login tapi masih bisa masuk user dashboard. Sekalian menyelesaikan
+tugas dari sesi sebelumnya
+
+2. Isi middleware
+mengekspor 'default' dari next-auth middleware, saat membuat variabel config dan membuat objek matcher, apapun 
+rutenya tetapi belum login, maka akan langsung diarahkan ke halaman login
+
+3. config = { matcher: ["/users/:path*]" }
+artinya apapun yang rutenya users dan setelahnya tetapi bukan login, maka akan diarahkan ke login
+
+4. Membuat halaman baru pada bagian users/dashboard
+Membuat koleksi dan comment, tetapi masih menggunakan kode kasar karena kita memerlukan database
+
+5. Memisahkan header di bagian dashboard
+menyimpan header baru khusus untuk dashboard di component
