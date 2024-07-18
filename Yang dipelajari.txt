@@ -154,3 +154,26 @@ maka bisa menggunakan (~~) sebagai penggantinya.
 3. Perbaikan pada bagian inputSearch
 Perbaikan jika hanya mengetik spasi maka tetap dicari, maka diperbaiki dengan trim() supaya jika
 inputan kosong atau hanya berisi spasi tidak akan dijalankan fungsi searchnya
+
+*Sesi 8*
+
+1. Authenticaton (materi)
+membuat sign in user menggunakan github
+
+2. Melakukan instalasi next-auth
+melakukan instalasi plugin baru pada npm yang bernama npm i next-auth
+
+3. Fungsi dibuatkan folder [...nextauth]
+Untuk mengubungkan ke github melalui callback
+
+4. Menambahkan authentikasi kode dari github ke .env
+Menambahkan client id dan client secret. Caranya adalah login ke github lalu pilih setting pada github,
+setelah itu scroll ke bawah maka akan muncul pilihan developer, lalu pilih oAuth
+
+5. Membuat session pada web menggunakan next-auth
+file auth dan session disimpan pada bagian libs dengan nama auth-libs.js
+
+6. sign in dan sign out next js
+Kita bisa langsung membuat arah sign in dan sign langsung tanpa membuat filenya karena next js sudah
+secara default memberikannya, yang penting adalah arahnya ke keyword [...nextauth] yang berisi route.js 
+karena ini merupakan callback yang fleksibel

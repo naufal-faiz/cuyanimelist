@@ -22,8 +22,8 @@ const Page = async ({ params: { id } }) => {
           <p>{anime.data.score}</p>
         </div>
         <div className="w-36 flex flex-col justify-center items-center rounded border border-myColor-primary">
-          <h3 className="font-bold p-2 text-xl">Popularity</h3>
-          <p>{anime.data.popularity}</p>
+          <h3 className="font-bold p-2 text-xl">Episode</h3>
+          <p>{anime.data.episodes}</p>
         </div>
         <div className="w-36 flex flex-col justify-center items-center rounded border border-myColor-primary">
           <h3 className="font-bold p-2 text-xl">Favorites</h3>
