@@ -196,3 +196,40 @@ Membuat koleksi dan comment, tetapi masih menggunakan kode kasar karena kita mem
 
 5. Memisahkan header di bagian dashboard
 menyimpan header baru khusus untuk dashboard di component
+
+*Sesi 10*
+
+1. Melakukan perbaikan untuk button kembali
+menggunakan useRouter dari next/navigation lalu membuat variabel penampung useRouter dan menaruh onclick pada button
+yang berisi () => router.back()
+
+2. instalasi prisma untuk mysql
+melakukan instalasi prisma untuk membantu mempermudah pengelolaan database menggunakan npm i prisma --save-dev dan
+initialisasi dengan npx prisma init --dataresource-provider mysql
+
+3. Update versi next.js
+dengan kode npx i next@latest react@latest react-dom@latest
+
+4. schema.prisma
+model untuk membangun database. @@unique untuk menentukan apa yang tidak bisa dibuat duplikat
+
+5. npx prisma migrate dev
+digunakan untuk mengirim hasil model ke database
+
+6. npx prisma generate
+fungsinya untuk membantu eksekusi database
+
+7. membuat prisma.js di libs
+Fungsinya adlah agar apabila ada query baru, kita tidak perlu membuat terus menerus program baru yang dapat menyebabkan 
+overload
+
+8. membuat hitting api dengan membuat route
+Route dibuat di api dengan folder v1/collection
+
+9. membuat collectionButton di component animelist
+karena users/dashboard/collection isinya adalah server component, jadi harus membuat button onclick secara terpisah
+
+10. Membuat fitur koleksi
+karena di bagian dashboard ada mycollection dan mycomment, jadi dibuatkan mapping untuk collection dari database 
+melalui prisma yang dilempar melalui route v1 dari folder api
+
