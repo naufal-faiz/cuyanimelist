@@ -233,3 +233,16 @@ karena users/dashboard/collection isinya adalah server component, jadi harus mem
 karena di bagian dashboard ada mycollection dan mycomment, jadi dibuatkan mapping untuk collection dari database 
 melalui prisma yang dilempar melalui route v1 dari folder api
 
+*Sesi 11*
+.
+1. Membuat database melalui schema.prisma dengan nama collection
+Membuat database untuk penyimpanan koleksi user di prisma, perintah update adlah "npc prisma migrate dev --name namaUpdate"
+
+2. Membuat fitur komentar
+membuat komponen commentbox dan commentinput pada folder components, lalu membuat halaman khusus untuk user myComment
+di users/dashboard
+
+3. Membuat route khusus komentar
+membuat route.js di api/auth/comment dan dihubungkan ke folder components dalam animelist berupa commentinput
+
+4. Fungsi commentinput adlah untuk isi komen, fungsi commentbox adalah untuk menampilkan hasil komentar
